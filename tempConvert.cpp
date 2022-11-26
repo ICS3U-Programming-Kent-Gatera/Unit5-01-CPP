@@ -15,15 +15,16 @@ void fahrenheit() {
         float tempCelsius;
         std::cout << "What is the temperature?(C) :";
         std::cin >> tempCelsiusStr;
-        tempCelsius = stoi(tempCelsiusStr);
+        // Using "stof" instead of stoi to convert to float.
+        tempCelsius = stof(tempCelsiusStr);
 
         // I put the formula over here because
         // The variables need to be declared in the same scope.
         float tempFahrenheit = (1.8 * tempCelsius + 32);
-        std::cout << tempCelsius << " C = " << std::fixed <<
-        std::setprecision(2) << tempFahrenheit << " F";
+        std::cout << std::fixed << std::setprecision(2) <<
+        tempCelsius << " C = "<< tempFahrenheit << " F";
     } catch (std::invalid_argument) {
-        std::cout << temp << "is an invalid input." << '\n';
+        std::cout << "Invalid input." << '\n';
     }
 }
 
